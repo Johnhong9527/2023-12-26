@@ -1,0 +1,32 @@
+:root {
+    .deep {
+        --back1: rgb(36, 36, 36);
+        --back2: green;
+        --back3: rgb(181, 79, 79);
+        --back4: rgb(223, 178, 178);
+        --back5: #fff;
+        --back6: rgba(223, 178, 178,0.3);
+    }
+    .default {
+        --back1: rgb(219, 219, 219);
+        --back2: rgb(255, 127, 255);
+        --back3: rgb(74, 176, 176);
+        --back4: rgb(32, 77, 77);
+        --back5: #000;
+        --back6: rgba(223, 178, 178,0);
+    }
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+/* 您的 CSS 样式 */
+
+/* 使用全局变量示例 */
+.homeDeep {
+    background-color: var(--back1);
+}
+
+/* 更多样式中使用其他全局变量 */

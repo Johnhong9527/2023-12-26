@@ -24,3 +24,4 @@ yarn-error.log*
 *.sw*
 *.config.local
 pages.json.temp
+mydata.sqlite3

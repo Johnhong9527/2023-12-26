@@ -1,0 +1,121 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Traffic Light Data API",
+      "description": "API for inserting traffic light data into the database"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/api/insert": {
+        "post": {
+          "summary": "Insert Traffic Light Data",
+          "description": "Inserts new traffic light data into the database.",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Traffic light data to be inserted",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/InsertData"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Data inserted successfully",
+              "schema": {
+                "$ref": "#/definitions/InsertResponse"
+              }
+            },
+            "400": {
+              "description": "Invalid input"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "InsertData": {
+        "type": "object",
+        "required": [
+          "creator"
+        ],
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "red_light_straight_interval": {
+            "type": "integer"
+          },
+          "red_light_left_turn_interval": {
+            "type": "integer"
+          },
+          "red_light_right_turn_interval": {
+            "type": "integer"
+          },
+          "green_light_straight_interval": {
+            "type": "integer"
+          },
+          "green_light_left_turn_interval": {
+            "type": "integer"
+          },
+          "green_light_right_turn_interval": {
+            "type": "integer"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "signal_light_number": {
+            "type": "string"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "updater": {
+            "type": "string"
+          },
+          "jurisdiction_number": {
+            "type": "string"
+          },
+          "person_in_charge": {
+            "type": "string"
+          },
+          "remark": {
+            "type": "string"
+          }
+        }
+      },
+      "InsertResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+  
